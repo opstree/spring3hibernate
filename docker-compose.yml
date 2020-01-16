@@ -1,0 +1,25 @@
+version: '2'
+services:
+  spring3hibernate:
+    build:
+      context: . 
+      dockerfile: Dockerfile
+    ports:
+      - "8080:8080" 
+    restart: always
+    depends_on: 
+      - mysql.okts-test 
+  mysql.okts-test:
+    image: mysql:5.7
+    restart: always
+    expose:
+      - '3306'
+    environment:
+       MYSQL_DATABASE: employeedb
+       MYSQL_USER: 'root'
+       MYSQL_PASSWORD: 'password'
+       MYSQL_ROOT_PASSWORD: password
+    volumes:
+       - mysql_okts_test:/var/lib/mysql
+volumes:
+  mysql_okts_test:
