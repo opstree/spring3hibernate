@@ -62,3 +62,15 @@ docker build -t opstree/spring3hibernate:latest -f Dockerfile .
 ```
 
 That's it. It will create Tomcat Image having the war itself. Now just go and deploy the docker image anywhere you want.
+
+#### Docker Compose Setup
+
+```shell
+docker-compose build
+docker-compose up 
+```
+
+The compose file will spinup three containers:
+1) Nginx (Ingress)
+2) Spring3Hibernate (JAVA APP)
+3) MySql (Database)
