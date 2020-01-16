@@ -1,15 +1,15 @@
-version: '2'
+version: '3'
 services:
-  spring3hibernate:
+  spring3hibernate.okts.tk:
     build:
       context: . 
       dockerfile: Dockerfile
-    ports:
-      - "8080:8080" 
+    expose:
+      - '8080'
     restart: always
     depends_on: 
-      - mysql.okts-test 
-  mysql.okts-test:
+      - mysql.okts.tk 
+  mysql.okts.tk:
     image: mysql:5.7
     restart: always
     expose:
@@ -18,8 +18,17 @@ services:
        MYSQL_DATABASE: employeedb
        MYSQL_USER: 'root'
        MYSQL_PASSWORD: 'password'
-       MYSQL_ROOT_PASSWORD: password
+       MYSQL_ROOT_PASSWORD: 'password'
     volumes:
-       - mysql_okts_test:/var/lib/mysql
+       - mysql_okts_tk:/var/lib/mysql
+  ingress.okts.tk:
+    build:
+      context: nginx
+      dockerfile: Dockerfile
+    ports:
+      - "80:80" 
+    restart: always
+    depends_on: 
+      - spring3hibernate.okts.tk        
 volumes:
-  mysql_okts_test:
+  mysql_okts_tk:
