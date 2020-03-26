@@ -45,7 +45,7 @@
   - name: listing
     command: ls
     register: result
-  -debug:
+  - debug:
       msg: "{{result}}"
   
   - name: service file of tomcat is copied to the target
