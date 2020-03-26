@@ -1,2 +1,2 @@
 [vagrant]
-root ansible_host=192.168.0.23 ansible_users=root
+root ansible_host=192.168.0.23 ansible_users=jenkins
