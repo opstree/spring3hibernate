@@ -1,0 +1,53 @@
+---
+- name: java and tomcat installation
+  hosts: vagrant
+  become: true
+  tasks:
+
+  - name: Install java
+    apt:
+        name: default-jdk
+      
+  - name: adding tomcat group
+    group:
+      name: tomcat
+  - name: adding tomcat user
+    user:
+      name: tomcat
+      group: tomcat
+      home: /opt/tomcat
+      shell: /bin/false
+  - name: downloading from web  & unarchive the file
+    unarchive:
+      src: "{{url}}"
+      dest: /opt/tomcat
+      remote_src: yes
+      extra_opts: [--strip-components=1]
+    vars:
+       url: http://apachemirror.wuchna.com/tomcat/tomcat-8/v8.5.53/bin/apache-tomcat-8.5.53.tar.gz 
+
+  - name: Change file permissions
+    file:
+      path: /opt/tomcat
+      mode: '0755'
+  - name: Changing ownership
+    file:
+      path: /opt/tomcat
+      state: directory
+      recurse: yes
+      owner: tomcat
+      group: tomcat
+  - name: Set JAVA_HOME
+    shell: sudo echo "export JAVA_HOME=/usr/lib/jvm/java-1.11.0-openjdk-amd64" >> ~/.bashrc
+  - name: Source Bashrc
+    action: shell . ~/.bashrc
+  - name: service file of tomcat is copied to the target
+    copy:
+      src: ~/tomcat.service
+      dest: /etc/systemd/system/
+  - name: starting the service of tomcat8
+    systemd:
+      name: tomcat
+      state: started
+      enabled: true
+      daemon_reload: true
