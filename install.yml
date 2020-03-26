@@ -25,7 +25,12 @@
       extra_opts: [--strip-components=1]
     vars:
        url: http://apachemirror.wuchna.com/tomcat/tomcat-8/v8.5.53/bin/apache-tomcat-8.5.53.tar.gz 
-
+  - name: listing
+    command: pwd
+    register: result
+  - debug:
+      msg: "{{result.stdout_lines}}"
+  
   - name: Change file permissions
     file:
       path: /opt/tomcat
@@ -46,11 +51,11 @@
     command: pwd
     register: result
   - debug:
-      msg: "{{result}}"
+      msg: "{{result.stdout_lines}}"
   
   - name: service file of tomcat is copied to the target
     copy:
-      src: ~/tomcat.service
+      src: /root/tomcat.service
       dest: /etc/systemd/system/
   - name: starting the service of tomcat8
     systemd:
