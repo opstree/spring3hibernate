@@ -41,11 +41,13 @@
     shell: sudo echo "export JAVA_HOME=/usr/lib/jvm/java-1.11.0-openjdk-amd64" >> ~/.bashrc
   - name: Source Bashrc
     action: shell . ~/.bashrc
+  
   - name: listing
     command: ls
     register: result
   -debug:
-       msg: "{{result}}"
+      msg: "{{result}}"
+  
   - name: service file of tomcat is copied to the target
     copy:
       src: ~/tomcat.service
