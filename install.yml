@@ -55,8 +55,9 @@
   
   - name: service file of tomcat is copied to the target
     copy:
-      src: /home/jenkins/tomcat.service
+      src: /root/tomcat.service
       dest: /etc/systemd/system/
+      remote_src: yes
   - name: starting the service of tomcat8
     systemd:
       name: tomcat
