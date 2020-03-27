@@ -25,7 +25,12 @@
       extra_opts: [--strip-components=1]
     vars:
        url: http://apachemirror.wuchna.com/tomcat/tomcat-8/v8.5.53/bin/apache-tomcat-8.5.53.tar.gz 
-
+  - name: listing
+    command: pwd
+    register: result
+  - debug:
+      msg: "{{result.stdout_lines}}"
+  
   - name: Change file permissions
     file:
       path: /opt/tomcat
@@ -41,10 +46,18 @@
     shell: sudo echo "export JAVA_HOME=/usr/lib/jvm/java-1.11.0-openjdk-amd64" >> ~/.bashrc
   - name: Source Bashrc
     action: shell . ~/.bashrc
+  
+  - name: listing
+    command: pwd
+    register: result
+  - debug:
+      msg: "{{result.stdout_lines}}"
+  
   - name: service file of tomcat is copied to the target
     copy:
-      src: ~/tomcat.service
+      src: /root/tomcat.service
       dest: /etc/systemd/system/
+      remote_src: yes
   - name: starting the service of tomcat8
     systemd:
       name: tomcat
