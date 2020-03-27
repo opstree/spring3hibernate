@@ -1,6 +1,6 @@
 Provisioning:-
 **Provision application servers, for example - java, tomcat are required for a java project.**
-![](/home/upasna/ansible/March19/Screenshot from 2020-03-27 09-54-17.png)
+![](./image1.png)
 ![](/home/upasna/ansible/March19/Screenshot from 2020-03-27 09-54-45.png)
 
 Build:-
