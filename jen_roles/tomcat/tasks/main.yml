@@ -43,7 +43,7 @@
            dest: /etc/systemd/system/tomcat.service
    notify: restart
 
- - name: collect facts about system services
+ - name: state of services
    service_facts:
    register: services_state
 
