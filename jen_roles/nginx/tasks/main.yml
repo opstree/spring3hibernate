@@ -1,0 +1,46 @@
+---
+# tasks file for nginx
+    - debug:
+         var: ansible_distribution
+
+    - name: Install nginx
+      apt:
+         name: nginx
+         state: present
+         update_cache: yes
+      when: ansible_distribution == "Ubuntu"
+
+    - name: print message
+      fail:
+       msg: "OS not supported"
+      when: ansible_distribution != 'Ubuntu'
+
+    - name: allow nginx
+      command: ufw allow 'Nginx HTTP'
+
+    - name: Create html file
+      file:
+         path: /var/www/html/index1.html
+         state: touch
+
+    - name: Printing Welcome message
+      lineinfile:
+            path: /var/www/html/index1.html
+            line: Hello from Opstree
+
+    - name: Print hostname
+      template:
+             src: index.html.j2
+             dest: /var/www/html/index.html
+
+    - name: backup
+      copy:
+          src: /etc/nginx/sites-available/default
+          dest: /root
+
+    - name: default file
+      template:
+             src: default.j2
+             dest: /etc/nginx/sites-available/default
+      notify: restart
+      

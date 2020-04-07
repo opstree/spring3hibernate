@@ -1,0 +1,2 @@
+[nginx1]
+root ansible_host=172.16.119.131 ansible_user=root

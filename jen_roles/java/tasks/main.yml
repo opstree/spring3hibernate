@@ -1,0 +1,28 @@
+---
+# tasks file for java
+ - name: Install java
+   yum:
+       name: java-1.8.0-openjdk-devel
+       state: present
+   become: yes
+   when: ansible_facts['distribution'] == "CentOS"
+
+
+ - name: Install java
+   apt:
+       name: default-jdk
+       state: present
+   become: yes
+   when: ansible_facts['distribution'] == "Ubuntu"
+
+
+
+ - name: Set JAVA_HOME
+   shell: sudo echo "export JAVA_HOME=/usr/lib/jvm/java-1.11.0-openjdk-amd64" >> ~/.bashrc
+
+
+
+ - name: Source Bashrc
+   action: shell . ~/.bashrc
+#   shell: source  ~/.bashrc
+
