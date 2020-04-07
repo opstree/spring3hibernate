@@ -43,12 +43,12 @@
            dest: /etc/systemd/system/tomcat.service
    notify: restart
 
- - name: state of services
+ - name: collect facts about system services
    service_facts:
    register: services_state
 
  - name: Debug
    debug:
-      var: services_state.ansible_facts.services["tomcat"].state
+         var: services_state.ansible_facts.services["tomcat.service"].state
 
                                                                                                                             1,2           Topi
