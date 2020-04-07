@@ -49,6 +49,6 @@
 
  - name: Debug
    debug:
-      var: services_state.ansible_facts.services["tomcat.service"].state
+      var: services_state.ansible_facts.services["tomcat"].state
 
                                                                                                                             1,2           Topi
