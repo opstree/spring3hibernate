@@ -51,4 +51,4 @@
    debug:
          var: services_state.ansible_facts.services["tomcat.service"].state
 
-                                                                                                                            1,2           Topi
+
