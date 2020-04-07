@@ -1,4 +1,4 @@
 ---
 - hosts: nginx1
   roles:
-      - "{{role_name}}"
+      - $role_name
