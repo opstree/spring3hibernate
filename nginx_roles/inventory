@@ -1,2 +1,2 @@
 [nginx1]
-root ansible_host=172.16.119.132 ansible_user=root
+ec2 ansible_host=127.0.0.1 ansible_user=ec2-user
