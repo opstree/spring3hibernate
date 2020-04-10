@@ -23,6 +23,7 @@
       copy:
           src: /etc/nginx/sites-available/default
           dest: /root
+          remote_src: no
 
     - name: default file
       template:
