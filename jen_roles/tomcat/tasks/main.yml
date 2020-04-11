@@ -1,0 +1,54 @@
+---
+# tasks file for tomcat
+ - name: Create a directory if it does not exist
+   file:
+      path: /opt/tomcat
+      state: directory
+      mode: '0755'
+
+ - name: adding tomcat group
+   group:
+      name: tomcat
+
+ - name: adding tomcat user
+   user:
+      name: tomcat
+      group: tomcat
+      home: /opt/tomcat
+      shell: /bin/false
+
+ - name: downloading from web  & unarchive the file
+   unarchive:
+      src: "{{url}}"
+      dest: /opt/tomcat
+      remote_src: yes
+      extra_opts: [--strip-components=1]
+
+
+ - name: Change file permissions
+   file:
+      path: /opt/tomcat
+      mode: '0755'
+
+ - name: Changing ownership
+   file:
+      path: /opt/tomcat
+      state: directory
+      recurse: yes
+      owner: tomcat
+      group: tomcat
+ - name: copy service file
+   template:
+           src: tomcat.service.j2
+           dest: /etc/systemd/system/tomcat.service
+   notify: restart
+
+ - name: collect facts about system services
+   service_facts:
+   register: services_state
+
+ - name: Debug
+   debug:
+         var: services_state.ansible_facts.services["tomcat.service"].state
+
+

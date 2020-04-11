@@ -1,0 +1,9 @@
+---
+# handlers file for tomcat
+    - name: restart
+      systemd:
+        name: tomcat
+        state: restarted
+        enabled: yes
+        daemon_reload: yes
+
