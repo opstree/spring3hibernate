@@ -2,8 +2,8 @@
 <pmd xmlns="http://pmd.sourceforge.net/report/2.0.0"
     xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
     xsi:schemaLocation="http://pmd.sourceforge.net/report/2.0.0 http://pmd.sourceforge.net/report_2_0_0.xsd"
-    version="6.21.0" timestamp="2020-03-07T15:57:50.323">
-<file name="/var/lib/jenkins/workspace/maven/src/main/java/com/sample/dao/EmployeeDao.java">
+    version="6.21.0" timestamp="2020-03-09T16:19:58.679">
+<file name="/home/upasna/spring3hibernate/src/main/java/com/sample/dao/EmployeeDao.java">
 <violation beginline="9" endline="9" begincolumn="16" endcolumn="51" rule="UnnecessaryModifier" ruleset="Code Style" package="com.sample.dao" class="EmployeeDao" method="addEmployee" externalInfoUrl="https://pmd.github.io/pmd-6.21.0/pmd_rules_java_codestyle.html#unnecessarymodifier" priority="3">
 Unnecessary modifier 'public' on method 'addEmployee': the method is declared in an interface type
 </violation>
@@ -17,7 +17,7 @@ Unnecessary modifier 'public' on method 'getEmployee': the method is declared in
 Unnecessary modifier 'public' on method 'deleteEmployee': the method is declared in an interface type
 </violation>
 </file>
-<file name="/var/lib/jenkins/workspace/maven/src/main/java/com/sample/dao/ImageDao.java">
+<file name="/home/upasna/spring3hibernate/src/main/java/com/sample/dao/ImageDao.java">
 <violation beginline="9" endline="9" begincolumn="16" endcolumn="43" rule="UnnecessaryModifier" ruleset="Code Style" package="com.sample.dao" class="ImageDao" method="saveImage" externalInfoUrl="https://pmd.github.io/pmd-6.21.0/pmd_rules_java_codestyle.html#unnecessarymodifier" priority="3">
 Unnecessary modifier 'public' on method 'saveImage': the method is declared in an interface type
 </violation>
@@ -28,7 +28,7 @@ Unnecessary modifier 'public' on method 'listImages': the method is declared in 
 Unnecessary modifier 'public' on method 'getImage': the method is declared in an interface type
 </violation>
 </file>
-<file name="/var/lib/jenkins/workspace/maven/src/main/java/com/sample/service/EmployeeService.java">
+<file name="/home/upasna/spring3hibernate/src/main/java/com/sample/service/EmployeeService.java">
 <violation beginline="10" endline="10" begincolumn="16" endcolumn="51" rule="UnnecessaryModifier" ruleset="Code Style" package="com.sample.service" class="EmployeeService" method="addEmployee" externalInfoUrl="https://pmd.github.io/pmd-6.21.0/pmd_rules_java_codestyle.html#unnecessarymodifier" priority="3">
 Unnecessary modifier 'public' on method 'addEmployee': the method is declared in an interface type
 </violation>
@@ -42,7 +42,7 @@ Unnecessary modifier 'public' on method 'getEmployee': the method is declared in
 Unnecessary modifier 'public' on method 'deleteEmployee': the method is declared in an interface type
 </violation>
 </file>
-<file name="/var/lib/jenkins/workspace/maven/src/main/java/com/sample/service/EmployeeServiceImpl.java">
+<file name="/home/upasna/spring3hibernate/src/main/java/com/sample/service/EmployeeServiceImpl.java">
 <violation beginline="22" endline="24" begincolumn="20" endcolumn="17" rule="EmptyTryBlock" ruleset="Error Prone" package="com.sample.service" class="EmployeeServiceImpl" method="addEmployee" externalInfoUrl="https://pmd.github.io/pmd-6.21.0/pmd_rules_java_errorprone.html#emptytryblock" priority="3">
 Avoid empty try blocks
 </violation>
@@ -50,7 +50,7 @@ Avoid empty try blocks
 Avoid empty catch blocks
 </violation>
 </file>
-<file name="/var/lib/jenkins/workspace/maven/src/main/java/com/sample/service/ImageService.java">
+<file name="/home/upasna/spring3hibernate/src/main/java/com/sample/service/ImageService.java">
 <violation beginline="10" endline="10" begincolumn="16" endcolumn="43" rule="UnnecessaryModifier" ruleset="Code Style" package="com.sample.service" class="ImageService" method="saveImage" externalInfoUrl="https://pmd.github.io/pmd-6.21.0/pmd_rules_java_codestyle.html#unnecessarymodifier" priority="3">
 Unnecessary modifier 'public' on method 'saveImage': the method is declared in an interface type
 </violation>
@@ -61,7 +61,7 @@ Unnecessary modifier 'public' on method 'listImages': the method is declared in 
 Unnecessary modifier 'public' on method 'getImage': the method is declared in an interface type
 </violation>
 </file>
-<file name="/var/lib/jenkins/workspace/maven/src/main/java/com/sample/service/ImageServiceImpl.java">
+<file name="/home/upasna/spring3hibernate/src/main/java/com/sample/service/ImageServiceImpl.java">
 <violation beginline="25" endline="27" begincolumn="20" endcolumn="17" rule="EmptyTryBlock" ruleset="Error Prone" package="com.sample.service" class="ImageServiceImpl" method="saveImage" externalInfoUrl="https://pmd.github.io/pmd-6.21.0/pmd_rules_java_errorprone.html#emptytryblock" priority="3">
 Avoid empty try blocks
 </violation>
@@ -69,12 +69,12 @@ Avoid empty try blocks
 Avoid empty catch blocks
 </violation>
 </file>
-<file name="/var/lib/jenkins/workspace/maven/src/main/java/com/sample/servlet/DownloadServlet.java">
+<file name="/home/upasna/spring3hibernate/src/main/java/com/sample/servlet/DownloadServlet.java">
 <violation beginline="83" endline="85" begincolumn="27" endcolumn="25" rule="EmptyCatchBlock" ruleset="Error Prone" package="com.sample.servlet" class="DownloadServlet" method="getUploadDir" externalInfoUrl="https://pmd.github.io/pmd-6.21.0/pmd_rules_java_errorprone.html#emptycatchblock" priority="3">
 Avoid empty catch blocks
 </violation>
 </file>
-<file name="/var/lib/jenkins/workspace/maven/src/main/java/com/sample/servlet/FileUploadServlet.java">
+<file name="/home/upasna/spring3hibernate/src/main/java/com/sample/servlet/FileUploadServlet.java">
 <violation beginline="85" endline="87" begincolumn="27" endcolumn="25" rule="EmptyCatchBlock" ruleset="Error Prone" package="com.sample.servlet" class="FileUploadServlet" method="getUploadDir" externalInfoUrl="https://pmd.github.io/pmd-6.21.0/pmd_rules_java_errorprone.html#emptycatchblock" priority="3">
 Avoid empty catch blocks
 </violation>
