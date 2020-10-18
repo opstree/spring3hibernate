@@ -1,0 +1,2 @@
+[vagrant]
+root ansible_host=192.168.0.23 ansible_ssh_pass=root ansible_ssh_user=root

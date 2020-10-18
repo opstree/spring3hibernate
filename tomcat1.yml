@@ -1,0 +1,35 @@
+---
+- hosts: all
+  become: yes
+  tasks:
+   - name: epel install
+     shell: amazon-linux-extras install epel -y
+   - name: Java install
+     yum:
+      name: java-1.8.0
+      state: present
+   - name: Git install
+     yum:
+      name: git
+      state: present
+   - name: DOWNLOAD TOMCAT
+     uri:
+      url: https://mirrors.estointernet.in/apache/tomcat/tomcat-9/v9.0.34/bin/apache-tomcat-9.0.34.tar.gz
+      dest: /opt/
+   - name: EXTRACTION
+     unarchive:
+        src: /opt/apache-tomcat-9.0.34.tar.gz
+        dest: /opt/
+        remote_src: yes
+   - name: Start tomcat
+     shell: /opt/apache-tomcat-9.0.34/bin/startup.sh
+   - name: Cloning Git
+     git:
+      repo: https://github.com/upasna-kanojia/spring3hibernate.git
+      dest: /ops
+      clone: yes
+   - name: Copy App into webapps
+     copy:
+      remote_src: true
+      src: /ops/target/Spring3HibernateApp.war
+      dest: /opt/apache-tomcat-9.0.34/webapps/

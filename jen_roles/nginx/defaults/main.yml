@@ -1,0 +1,4 @@
+---
+# defaults file for nginx\
+   port: 8080
+   name: Opstree
