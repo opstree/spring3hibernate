@@ -1,6 +1,6 @@
 terraform {
   backend "s3" {
-    bucket = "ayush-terraform-state"
+    bucket = "ayushterraform-state"
     region = "us-east-1"
   }
 }
