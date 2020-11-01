@@ -3,7 +3,7 @@
       "name": "spring3hibernate",
       "image": "188078574990.dkr.ecr.us-east-1.amazonaws.com/spring3hibernate:latest",
       "cpu": 10,
-      "memory": 128,
+      "memory": 512,
       "essential": true,
       "portMappings": [
         {
@@ -29,7 +29,7 @@
         "name": "mysql",
         "image": "188078574990.dkr.ecr.us-east-1.amazonaws.com/mysql:latest",
         "cpu": 10,
-        "memory": 128,
+        "memory": 512,
         "essential": true,
           "portMappings": [
             {
@@ -51,14 +51,13 @@
                 "name": "MYSQL_ROOT_PASSWORD",
                 "value": "password"
               }              
-          ]
-
+            ]
     },
     {
         "name": "nginx",
         "image": "188078574990.dkr.ecr.us-east-1.amazonaws.com/nginx:latest",
         "cpu": 10,
-        "memory": 128,
+        "memory": 512,
         "essential": true,
         "portMappings": [
           {

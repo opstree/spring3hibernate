@@ -1,6 +1,6 @@
 resource "aws_security_group" "lb" {
   name   = "allow-all-lb"
-  vpc_id = "${aws_vpc.awsvpc.id}"
+  vpc_id = aws_vpc.awsvpc.id
   ingress {
     from_port   = 0
     to_port     = 0
@@ -28,7 +28,7 @@ resource "aws_lb_target_group" "lb_target_group" {
   port        = "80"
   protocol    = "HTTP"
   target_type = "instance"
-  vpc_id      = "${aws_vpc.awsvpc.id}"
+  vpc_id      = aws_vpc.awsvpc.id
   health_check {
     path                = "/"
     healthy_threshold   = 2
@@ -40,11 +40,11 @@ resource "aws_lb_target_group" "lb_target_group" {
 }
 
 resource "aws_lb_listener" "web-listener" {
-  load_balancer_arn = "${aws_lb.ecs-lb.arn}"
+  load_balancer_arn = aws_lb.ecs-lb.arn
   port              = "80"
   protocol          = "HTTP"
   default_action {
     type             = "forward"
-    target_group_arn = "${aws_lb_target_group.lb_target_group.arn}"
+    target_group_arn = aws_lb_target_group.lb_target_group.arn
   }
 }
