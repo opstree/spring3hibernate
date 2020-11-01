@@ -1,6 +1,6 @@
 ############################################################################################
 input steps:
-1. create a erc or docker repository and add the image url with tag under image section of container definiton file
+1. create a ECR repository and add the image url with tag under image section of container definiton file
 2. terraform init
 3. terraform plan
 4. terraform apply
