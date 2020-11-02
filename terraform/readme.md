@@ -13,6 +13,5 @@ ecs service: to run and maintain particular no of task on ecs cluster.
 ecs cluster: grouping of task and service.
 
 Ec2 instance is running all the three containers. lb is connecting to nginx at port 80.
-when hitting the DNS name for loadbalancer with port 80 nginx page is loading with message that page is unavailable, but the application is working as you can check at port 8080 of the Ec2 instance.
 facing issue with mounting volumes in container defintion.
 
