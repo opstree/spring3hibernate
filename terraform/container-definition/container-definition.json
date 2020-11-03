@@ -55,7 +55,7 @@
     },
     {
         "name": "nginx",
-        "image": "188078574990.dkr.ecr.us-east-1.amazonaws.com/nginx:latest",
+        "image": "188078574990.dkr.ecr.us-east-1.amazonaws.com/nginx:latest1",
         "cpu": 10,
         "memory": 512,
         "essential": true,
