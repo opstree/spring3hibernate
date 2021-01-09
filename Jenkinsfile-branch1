@@ -1,3 +1,4 @@
+input 'enable or disable'
 @Library('java-ci') _
 node {
     functions.cloneRepo()
