@@ -15,3 +15,9 @@ def codeQuality() {
         sh 'mvn checkstyle:checkstyle'
     }
 }
+
+def codeCoverage() {
+    stage("code coverage") {
+        sh 'mvn cobertura:cobertura'
+    }
+}
