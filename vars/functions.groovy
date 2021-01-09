@@ -1,11 +1,6 @@
 def cloneRepo() {
     stage("clone repo") {
-        when {
-            expression { return enable || disable }
-        }
-        steps {
-            git 'https://github.com/vishal-cpu/spring3hibernate.git'
-        }
+        git 'https://github.com/vishal-cpu/spring3hibernate.git'
     }
 }
 
