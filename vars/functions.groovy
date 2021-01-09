@@ -9,12 +9,6 @@ def cloneRepo() {
     }
 }
 
-def cloneRepo() {
-    stage("clone repo") {
-        git 'https://github.com/vishal-cpu/spring3hibernate.git'
-    }
-}
-
 def codeStability() {
     stage("code stability") {
         sh 'mvn package'
