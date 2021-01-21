@@ -2,7 +2,7 @@ pipeline {
   agent any
   
   stages {
-    stege('build') {
+    stage('build') {
       steps {
         sh 'echo Hello World'
       }
