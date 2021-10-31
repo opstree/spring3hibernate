@@ -1,0 +1,8 @@
+node {
+    stage('clone') {
+        git 'https://github.com/opstree/spring3hibernate'
+    }
+    stage('List content') {
+        sh 'ls -lrta'
+    }
+}
