@@ -7,7 +7,7 @@ The main goal of this awesome Java Webapp is to encourage people to dive deep in
 The list of dependencies are not quite long but yes we do have some dependencies.
 
 - [X] **Maven 3.X**
-- [X] **Java 8**
+- [X] **Java8 or Java11**
 - [X] **MySQL**
 - [X] **Docker**(Only if you are willing to create a Dockerized Setup)
 
