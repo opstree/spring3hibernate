@@ -74,3 +74,4 @@ The compose file will spinup three containers:
 1) Nginx (Ingress)
 2) Spring3Hibernate (JAVA APP)
 3) MySql (Database)
+
