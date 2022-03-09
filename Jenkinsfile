@@ -1,7 +1,11 @@
-@Library('codeutils@master')
-
-def codeUtils = new org.opstree.java.javaCodePipeline()
-
-node{
-  codeUtils.call()
+pipeline {
+  agent any
+  
+  stages {
+    stage('build') {
+      steps {
+        sh 'echo Hello World'
+      }
+    }
+  }
 }
