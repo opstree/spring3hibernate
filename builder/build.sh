@@ -1,15 +1,28 @@
 #!/bin/bash
+source functions.sh
 
 echo "I'll build the code"
-sleep $SLEEP_DURATION
+sleep  $SLEEP_DURATION
 
-cd $CODEBASE_DIR
+cd  $CODEBASE_DIR
 mvn $INSTRUCTION
-echo "Code building done"
+if [ $? -eq 0 ]
+then
+  generateOutput mvn_execute true "dhek chal gya"
+  echo "build sucessfull"
+elif  [ $? != 0 ]
+then 
+  generateOutput mvn_execute false "nhi chala"
+  echo "build unsucessfull"
+fi
 
-OUTPUT_DIR=${EXECUTION_DIR}/${EXECUTION_TASK_ID}
 
-echo '{"mvn_execute": {"status": true, "message": "Dekha chal gaya"}}' > ${OUTPUT_DIR}/summary.json
 
-echo '{"status": true, "message": "Dekha chal gaya"}' > ${OUTPUT_DIR}/mvn_execute.output
+
+
+
+
+
+
+
 
