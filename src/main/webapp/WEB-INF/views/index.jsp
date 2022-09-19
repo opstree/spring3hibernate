@@ -4,7 +4,7 @@
 <html>
   <head>
     <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
-    <title>Sample Webapp CRUD Example </title>
+    <title>Sample Webapp(Canary) CRUD Example </title>
   </head>
   <body>
     <h2>Sample WebApp(Canary) CRUD Example for CI</h2>
