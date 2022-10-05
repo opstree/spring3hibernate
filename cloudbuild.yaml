@@ -1,0 +1,35 @@
+steps:
+#clone source repo
+- name: 'gcr.io/google.com/cloudsdktool/cloud-sdk'
+  id: 'repo-clone'
+  args: ['gcloud', 'source', 'repos', 'clone', 'spring3hibernate']
+
+#maven clean
+- name: 'maven:3-jdk-8'
+  id: 'maven-clean'
+  entrypoint: 'mvn'
+  args: ['clean','-f','/workspace/spring3hibernate/']
+
+#maven package
+- name: 'maven:3-jdk-8'
+  id: 'maven-package'
+  entrypoint: 'mvn'
+  args: ['package','-f','/workspace/spring3hibernate/']
+
+# Build & tag the image.
+- name: 'gcr.io/cloud-builders/docker'
+  id: 'dockerfile-build'
+  args: ['build', '-t', 'gcr.io/${PROJECT_ID}/spring:latest', '.']
+
+# Docker Push
+- name: 'gcr.io/cloud-builders/docker'
+  id: 'docker-push'
+  args: ['push', 'gcr.io/${PROJECT_ID}/spring:latest']
+
+#restart deployment
+- name: 'gcr.io/cloud-builders/kubectl'
+  id: 'restart deployment'
+  args: ['rollout', 'restart', 'deployment', 'springboot']
+  env:
+  - 'CLOUDSDK_COMPUTE_ZONE=asia-south1-a'
+  - 'CLOUDSDK_CONTAINER_CLUSTER=demo-gke'
