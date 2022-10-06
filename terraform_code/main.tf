@@ -8,11 +8,11 @@ provider "aws" {
 }
 data "aws_ami" "java-spring3Hibernateapplication" {
 most_recent = true
-owners = ["727357989976"] # Canonical
+owners = ["062711695447"] # Canonical
 
   filter {
       name   = "tag:Name"
-      values = ["golden-ami-*"]
+      values = ["spring3hibernate-ami-*"]
   }
 
   filter {
