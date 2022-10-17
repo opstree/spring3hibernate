@@ -1,0 +1,61 @@
+---
+- - :permit
+  - MIT
+  - :who: 
+    :why: 
+    :versions: []
+    :when: 2022-10-17 06:50:29.255601214 Z
+- - :permit
+  - Apache 2.0
+  - :who: 
+    :why: 
+    :versions: []
+    :when: 2022-10-17 06:54:27.256049185 Z
+- - :permit
+  - Common Development and Distribution License 1.0
+  - :who: 
+    :why: 
+    :versions: []
+    :when: 2022-10-17 06:55:07.637942543 Z
+- - :permit
+  - The GNU General Public License, Version 2
+  - :who: 
+    :why: 
+    :versions: []
+    :when: 2022-10-17 06:55:26.727717107 Z
+- - :permit
+  - LGPL
+  - :who: 
+    :why: 
+    :versions: []
+    :when: 2022-10-17 06:55:58.022044091 Z
+- - :permit
+  - GNU LESSER GENERAL PUBLIC LICENSE
+  - :who: 
+    :why: 
+    :versions: []
+    :when: 2022-10-17 06:56:09.078335004 Z
+- - :permit
+  - Common Public License Version 1.0
+  - :who: 
+    :why: 
+    :versions: []
+    :when: 2022-10-17 06:56:20.370905240 Z
+- - :permit
+  - CDDL + GPLv2 with classpath exception
+  - :who: 
+    :why: 
+    :versions: []
+    :when: 2022-10-17 06:56:32.140297451 Z
+- - :permit
+  - GNU Lesser General Public License, version 2.1
+  - :who: 
+    :why: 
+    :versions: []
+    :when: 2022-10-17 06:57:00.424897761 Z
+- - :permit
+  - Public Domain
+  - :who: 
+    :why: 
+    :versions: []
+    :when: 2022-10-17 06:57:09.597364315 Z
