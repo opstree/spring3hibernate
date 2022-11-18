@@ -17,7 +17,6 @@
         "tags": {
             "Name": "{{user `ami_name`}}-{{timestamp}}",
             "Os_hardening" : "true",
-            "Node-exporter" : "true",
             "Environment": "global",
             "Owner": "devops",
             "Type": "golden"
