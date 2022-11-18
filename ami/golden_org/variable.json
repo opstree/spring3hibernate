@@ -1,0 +1,11 @@
+{
+    "region": "ap-south-1",
+    "source_ami": "ami-024c319d5d14b463e",
+    "instance_type": "t2.micro",
+    "ssh_username": "ubuntu",
+    "ami_name": "golden-ami",
+    "vpc_id": "vpc-0928ca75a3d30c971",
+    "subnet_id": "subnet-086ad3db8e3652bba",
+    "security_group_ids": "sg-01a18e59e1b026d8f",
+    "ami_virtualization_type": "hvm"
+}
