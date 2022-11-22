@@ -1,0 +1,49 @@
+{
+    "builders": [
+      {
+        "type": "amazon-ebs",
+        "access_key": "{{user `access_key`}}",
+        "secret_key": "{{user `secret_key`}}",
+        "region": "{{user `region`}}",
+        "source_ami": "{{user `source_ami`}}",
+        "instance_type": "{{user `instance_type`}}",
+        "ssh_username": "{{user `ssh_username`}}",
+        "ami_name": "{{user `ami_name`}}-{{timestamp}}",
+        "vpc_id": "{{user `vpc_id`}}", 
+        "subnet_id": "{{user `subnet_id`}}",
+        "security_group_id": "{{user `security_group_id`}}",
+        "skip_region_validation": true, 
+        "associate_public_ip_address": true,       
+        "tags": {
+            "Name": "{{user `ami_name`}}-{{timestamp}}",
+            "Os_hardening" : "true",
+            "Environment": "global",
+            "Owner": "devops",
+            "Type": "golden"
+        }
+      }
+    ],
+
+    "provisioners": [
+
+      {
+        "type": "shell",
+        "inline": ["sleep 30"]
+      },
+
+    
+     {
+        "type": "file",
+        "source": "linux_hardening",
+        "destination": "/tmp/linux_hardening"
+      },
+    
+      {
+        "type": "ansible-local",
+        "galaxy_command": "ansible-galaxy",
+        "galaxy_file": "linux_hardening/requirements.yml",
+        "playbook_file": "linux_hardening/playbook.yml"
+      }    
+      
+    ]
+  }

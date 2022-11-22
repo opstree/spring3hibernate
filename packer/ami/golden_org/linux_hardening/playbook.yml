@@ -1,0 +1,6 @@
+---
+- name: os-audit
+  hosts: localhost
+  become: true
+  roles:
+    - role: osm_linux_armour

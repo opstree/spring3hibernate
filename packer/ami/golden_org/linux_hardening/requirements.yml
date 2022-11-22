@@ -1,0 +1,4 @@
+- name: osm_linux_armour
+  src: https://github.com/OT-OSM/linux_armour.git
+  scm: git
+  version: master
