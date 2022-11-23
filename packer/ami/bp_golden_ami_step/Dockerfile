@@ -9,7 +9,7 @@ COPY build.sh .
 ADD BP-BASE-SHELL-STEPS /opt/buildpiper/shell-functions/
 
 ENV INSTRUCTION build
-ENV EXTRA_VARS packer_build.json
+ENV EXTRA_VARS .
 
 ENV ACTIVITY_SUB_TASK_CODE PACKER_PLUGIN_PATH EXTRA_VARS
 
