@@ -1,12 +1,12 @@
 #!/bin/bash
-source functions.sh
+source /opt/buildpiper/shell-functions/functions.sh
 
-echo "Manage the packer code available at [$WORKSPACE] and have mounted at [${CODEBASE_DIR}/${PACKER_DIR}]"
+echo "Manage the packer code available at [$WORKSPACE] and have mounted at [${CODEBASE_DIR}/${PACKER_CODE}]"
 sleep  $SLEEP_DURATION
 
 
-cd  ${WORKSPACE}/${CODEBASE_DIR}/${PACKER_DIR}
-logInfoMessage "packer ${INSTRUCTION}"
+cd  ${WORKSPACE}/${CODEBASE_DIR}/${PACKER_CODE}
+logInfoMessage "packer ${INSTRUCTION} ${EXTRA_VARS}"
 
 packer ${INSTRUCTION} ${EXTRA_VARS}
 
