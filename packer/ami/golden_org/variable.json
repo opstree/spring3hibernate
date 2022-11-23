@@ -1,11 +1,11 @@
 {
-    "region": "us-west-2",
-    "source_ami": "ami-0c09c7eb16d3e8e70",
+    "region": "ap-south-1",
+    "source_ami": "ami-024c319d5d14b463e",
     "instance_type": "t2.micro",
     "ssh_username": "ubuntu",
     "ami_name": "golden-ami",
-    "vpc_id": "vpc-04d796513538107d5",
-    "subnet_id": "subnet-020af10ef815e5c07",
-    "security_group_ids": "sg-02b42751eab13f53a",
+    "vpc_id": "vpc-0c080ef99df27e7c8",
+    "subnet_id": "subnet-0d5dba5bf77183929",
+    "security_group_ids": "sg-018b08fa7e1bee3c4",
     "ami_virtualization_type": "hvm"
 }
