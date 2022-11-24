@@ -2,10 +2,10 @@
 source /opt/buildpiper/shell-functions/functions.sh
 source /opt/buildpiper/shell-functions/log-functions.sh
 
-logInfoMessage "I'll upload [$FILE] to the [$S3_BUCKET] bucket and have mounted at [${CODEBASE_DIR}/${FILE_LOCATION}]"
+logInfoMessage "I'll upload [$FILE] to the [$S3_BUCKET] bucket and have mounted at [${CODEBASE_DIR}]"
 sleep  "$SLEEP_DURATION"
 
-cd  "$WORKSPACE"/"${CODEBASE_DIR}"/"${FILE_LOCATION}"
+cd  "$WORKSPACE"/"${CODEBASE_DIR}"
 
 logInfoMessage "Copying ${FILE} to ${S3_BUCKET} bucket"
 aws s3 cp ${FILE} s3://${S3_BUCKET} 
