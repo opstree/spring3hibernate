@@ -2,11 +2,11 @@
 source /opt/buildpiper/shell-functions/functions.sh
 source /opt/buildpiper/shell-functions/log-functions.sh
 
-logInfoMessage "I'll upload [$FILE] to the [$S3_BUCKET] bucket and have mounted at [${CODEBASE_DIR}]"
+logInfoMessage "I'll upload [$FILE] to the [$S3_BUCKET] bucket and have mounted at [${CODEBASE_DIR}/$FILE_LOCATION}]"
 sleep  "$SLEEP_DURATION"
 
 logInfoMessage "Copying ${FILE} to ${S3_BUCKET} bucket"
-aws s3 cp ${WORKSPACE}/${CODEBASE_DIR}/${FILE} s3://${S3_BUCKET} 
+aws s3 cp ${WORKSPACE}/${CODEBASE_DIR}/${FILE_LOCATION}/${FILE} s3://${S3_BUCKET} 
 
 if [ $? -eq 0 ]
 then

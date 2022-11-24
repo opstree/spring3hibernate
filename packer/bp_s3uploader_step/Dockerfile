@@ -11,5 +11,6 @@ COPY build.sh .
 ADD BP-BASE-SHELL-STEPS /opt/buildpiper/shell-functions/
 
 ENV ACTIVITY_SUB_TASK_CODE S3_BUCKET FILE
+ENV FILE_LOCATION "."
 
 ENTRYPOINT [ "./build.sh" ]
