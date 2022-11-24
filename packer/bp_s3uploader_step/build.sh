@@ -6,7 +6,7 @@ logInfoMessage "I'll upload [$FILE] to the [$S3_BUCKET] bucket and have mounted 
 sleep  "$SLEEP_DURATION"
 
 cd  "$WORKSPACE"/"${CODEBASE_DIR}"
-cp /opt/buildpiper/${FILE} .
+cp ${FILE} .
 
 logInfoMessage "Copying ${FILE} to ${S3_BUCKET} bucket"
 aws s3 cp ${FILE} s3://${S3_BUCKET} 
