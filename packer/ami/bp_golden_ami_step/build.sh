@@ -8,6 +8,7 @@ sleep  $SLEEP_DURATION
 cd  ${WORKSPACE}/${CODEBASE_DIR}/${PACKER_DIR}
 logInfoMessage "packer ${INSTRUCTION} ${EXTRA_VARS}"
 
+packer init .
 packer ${INSTRUCTION} ${EXTRA_VARS}
 
 if [ $? -eq 0 ]
