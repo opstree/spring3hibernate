@@ -28,22 +28,24 @@
 
       {
         "type": "shell",
-        "inline": ["sleep 30"]
+        "inline": ["sleep 30",
+        "sudo apt-add-repository ppa:ansible/ansible",
+        "sudo apt-get update", 
+        "while sudo lsof /var/lib/dpkg/lock-frontend ; do sleep 10; done;",
+        "sudo apt-get install ansible -y"]
       },
 
-    
-     {
+      {
         "type": "file",
         "source": "linux_hardening",
         "destination": "/tmp/linux_hardening"
       },
-    
+
       {
         "type": "ansible-local",
         "galaxy_command": "ansible-galaxy",
         "galaxy_file": "linux_hardening/requirements.yml",
         "playbook_file": "linux_hardening/playbook.yml"
       }    
-      
     ]
   }
