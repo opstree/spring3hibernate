@@ -6,7 +6,7 @@ kafka_multi_region             = false
 kafka_deletion_window_in_days  = null
 kafka_is_enabled               = true
 kafka_enable_key_rotation      = false
-kafka_kms_key_name             = "kafka-ksm-key"
+kafka_kms_key_name             = "msk-kafka-key"
 ## Kafka node and cluster config
 name_prefix         = "kafka-cluster"
 vpc_id              = "vpc-04d796513538107d5"
