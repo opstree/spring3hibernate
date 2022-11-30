@@ -1,0 +1,17 @@
+config_output_path     = "config"
+eks_cluster_version    = "1.21"
+endpoint_private       = false
+endpoint_public        = true
+kubeconfig_name        = "config"
+eks_subnets            = ["subnet-06e41801e9618a572", "subnet-020af10ef815e5c07"]
+ssh_key                = "oregon"
+node_sg                = ["sg-02b42751eab13f53a", "sg-0a80c39996b1d8abc"]
+instance_type          = ["t2.small"]
+desired_capacity       = 1
+disk_size              = 20
+max_capacity           = 1
+min_capacity           = 1
+capacity_type          = "ON_DEMAND"
+capacity_type_2        = "SPOT"
+subnets                = ["subnet-0558372d5ba749417", "subnet-08af060aeb20af40c"]
+vpc_id                 = "vpc-04d796513538107d5"
