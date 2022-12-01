@@ -23,7 +23,7 @@ output "pvt_subnet_ids" {
 }
 
 output "public_subnet_ids" {
-  value = module.vpc.public_subnet_ids
+  value = module.vpc.public_subnet_ids[0]
 }
 
 output "web_sg_id" {
