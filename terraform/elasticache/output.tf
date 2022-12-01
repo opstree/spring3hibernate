@@ -26,3 +26,9 @@ output "auth_token" {
   value       = module.elasticache.auth_token
   description = "Create a random string"
 }
+output "subnet_ids" {
+  value = data.terraform_remote_state.network.outputs.public_subnet_ids
+}
+output "security_group_ids" {
+ value = data.terraform_remote_state.network.outputs.web_sg_id 
+}
