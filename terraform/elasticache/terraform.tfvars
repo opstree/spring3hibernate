@@ -1,1 +1,0 @@
-name = "elasticache-cluster"
