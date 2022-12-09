@@ -1,8 +1,8 @@
 alb_name             = "t-alb"
 avaialability_zones  = ["us-west-2a", "us-west-2b"]
 igw_name             = "t-igw"
-logs_bucket          = "test-b01"
-logs_bucket_arn      = "arn:aws:s3:::test-b01"
+logs_bucket          = "bp-infra"
+logs_bucket_arn      = "arn:aws:s3:::bp-infra"
 nat_name             = "t-nat"
 private_subnets_cidr = ["10.0.64.0/18", "10.0.128.0/17"]
 pub_rt_name          = "pub-t"
