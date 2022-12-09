@@ -1,6 +1,6 @@
 terraform {
   backend "s3" {
-    bucket = "bp-step-tfstate"
+    bucket = "bp-infra"
     key = "elasticache/terraform.tfstate"
     region = "us-west-2"
   }
