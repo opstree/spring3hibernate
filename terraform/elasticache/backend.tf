@@ -1,7 +1,7 @@
 terraform {
   backend "s3" {
-    bucket = "bp-infra"
+    bucket = "bp-cloud-infra"
     key = "elasticache/terraform.tfstate"
-    region = "us-west-2"
+    region = "us-east-2"
   }
 }
