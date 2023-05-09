@@ -1,8 +1,8 @@
 terraform {
   backend "s3" {
-    bucket = "bp-cloud-infra"
+    bucket = "ot-bp-tf-states"
     key = "eks/terraform.tfstate"
-    region = "us-east-2"
+    region = "us-east-1"
   }
 }
 
