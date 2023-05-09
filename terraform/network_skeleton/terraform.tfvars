@@ -1,7 +1,7 @@
 alb_name             = "t-alb"
 avaialability_zones  = ["us-west-2a", "us-west-2b"]
 igw_name             = "t-igw"
-logs_bucket          = "bp-step-tfstate"
+logs_bucket          = "hitachi-alb-logs"
 logs_bucket_arn      = "arn:aws:s3:::bp-step-tfstate"
 nat_name             = "t-nat"
 private_subnets_cidr = ["10.0.64.0/18", "10.0.128.0/17"]
