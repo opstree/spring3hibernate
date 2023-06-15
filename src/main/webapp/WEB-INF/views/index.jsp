@@ -8,7 +8,7 @@
   </head>
   <body>
     <h2>Sample WebApp CRUD Example for CI</h2>
-    <h2>1. <a href="employees.html">List of Employees</a></h2>
+    <h2>1. <a href="employees.html">List of Employees V2</a></h2>
     <h2>2. <a href="add.html">Add Employee</a></h2>
     <h2>3. <a href="fileUpload.html">Upload File</a></h2>
     <h2>4. <a href="listImages.html">List Images</a></h2>

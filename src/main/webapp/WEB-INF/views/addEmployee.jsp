@@ -63,6 +63,6 @@
 		</c:forEach>
 	</table>
 </c:if>
-	 <h2><a href="employees.html">List of Employees</a></h2>
+	 <h2><a href="employees.html">List of Employees V2</a></h2>
 	</body>
 </html>
