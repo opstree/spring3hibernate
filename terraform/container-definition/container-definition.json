@@ -1,0 +1,82 @@
+[
+    {
+      "name": "spring3hibernate",
+      "image": "188078574990.dkr.ecr.us-east-1.amazonaws.com/spring3hibernate:latest",
+      "cpu": 10,
+      "memory": 512,
+      "essential": true,
+      "portMappings": [
+        {
+            "containerPort": 8080,
+            "hostPort": 8080,
+            "protocol": "tcp"
+        }
+    ],
+      "dependsOn": [
+          {
+            "containerName": "mysql",
+            "condition": "START"
+          }
+        ],
+      "links": [
+        
+          "mysql"
+        
+      ]
+    },
+
+    {
+        "name": "mysql",
+        "image": "188078574990.dkr.ecr.us-east-1.amazonaws.com/mysql:latest",
+        "cpu": 10,
+        "memory": 512,
+        "essential": true,
+          "portMappings": [
+            {
+                "containerPort": 3306,
+                "hostPort": 3306,
+                "protocol": "tcp"
+            }
+          ],
+          "environment": [
+              {
+                "name": "MYSQL_DATABASE",
+                "value": "employeedb"
+              },
+              {
+                "name": "MYSQL_PASSWORD",
+                "value": "password"
+              },
+              {
+                "name": "MYSQL_ROOT_PASSWORD",
+                "value": "password"
+              }              
+            ]
+    },
+    {
+        "name": "nginx",
+        "image": "188078574990.dkr.ecr.us-east-1.amazonaws.com/nginx:latest1",
+        "cpu": 10,
+        "memory": 512,
+        "essential": true,
+        "portMappings": [
+          {
+              "containerPort": 80,
+              "hostPort": 80,
+              "protocol": "tcp"
+          }
+      ],
+        "dependsOn": [
+            {
+              "containerName": "spring3hibernate",
+              "condition": "START"
+            }
+          ],
+        "links": [
+          
+            "spring3hibernate"
+        
+        ]
+    }
+
+]
